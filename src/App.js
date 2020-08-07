@@ -5,6 +5,7 @@ import Post from './Components/post';
 import { BrowserRouter, Route, Switch, NavLink, Redirect } from 'react-router-dom'
 import PostItem from './Components/postitem';
 import NotFound from './Components/404';
+import Conditional from './Components/conditional';
 
 
 function App() {
@@ -27,6 +28,10 @@ function App() {
             to="/profile" className="p-2 text-dark"
             activeStyle={{fontWeight:'bold'}}
             activeClassName="selected">Profile</NavLink>
+            <NavLink 
+            to="/conditional" className="p-2 text-dark"
+            activeStyle={{fontWeight:'bold'}}
+            activeClassName="selected">Conditional</NavLink>
           </nav>
         </div>
       </header>
@@ -36,6 +41,7 @@ function App() {
           <Route path="/posts/:id" component={PostItem}/>
           <Route path="/posts" component={Post}/>
           <Route path="/profile" component={Profile}/>
+          <Route path="/conditional" component={Conditional}/>
           <Route path="/" component={Home} exact/>
           <Route component={NotFound}/>
         </Switch>

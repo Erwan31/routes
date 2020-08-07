@@ -6,6 +6,7 @@ import { BrowserRouter, Route, Switch, NavLink, Redirect } from 'react-router-do
 import PostItem from './Components/postitem';
 import NotFound from './Components/404';
 import Conditional from './Components/conditional';
+import PureComp from './Components/pure_comp';
 
 
 function App() {
@@ -29,6 +30,10 @@ function App() {
             activeStyle={{fontWeight:'bold'}}
             activeClassName="selected">Profile</NavLink>
             <NavLink 
+            to="/purecomp" className="p-2 text-dark"
+            activeStyle={{fontWeight:'bold'}}
+            activeClassName="selected">Pure Comp</NavLink>
+            <NavLink 
             to="/conditional" className="p-2 text-dark"
             activeStyle={{fontWeight:'bold'}}
             activeClassName="selected">Conditional</NavLink>
@@ -42,6 +47,7 @@ function App() {
           <Route path="/posts" component={Post}/>
           <Route path="/profile" component={Profile}/>
           <Route path="/conditional" component={Conditional}/>
+          <Route path="/purecomp" component={PureComp}/>
           <Route path="/" component={Home} exact/>
           <Route component={NotFound}/>
         </Switch>

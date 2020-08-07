@@ -7,6 +7,7 @@ import PostItem from './Components/postitem';
 import NotFound from './Components/404';
 import Conditional from './Components/conditional';
 import PureComp from './Components/pure_comp';
+import User from './Components/user';
 
 
 function App() {
@@ -37,17 +38,21 @@ function App() {
             to="/conditional" className="p-2 text-dark"
             activeStyle={{fontWeight:'bold'}}
             activeClassName="selected">Conditional</NavLink>
+            <NavLink 
+            to="/user" className="p-2 text-dark"
+            activeStyle={{fontWeight:'bold'}}
+            activeClassName="selected">User</NavLink>
           </nav>
         </div>
       </header>
       <div className="container">
         <Switch>
-          <Redirect from="/profile" to="/"></Redirect>
           <Route path="/posts/:id" component={PostItem}/>
           <Route path="/posts" component={Post}/>
           <Route path="/profile" component={Profile}/>
           <Route path="/conditional" component={Conditional}/>
           <Route path="/purecomp" component={PureComp}/>
+          <Route path="/user" component={User}/>
           <Route path="/" component={Home} exact/>
           <Route component={NotFound}/>
         </Switch>
